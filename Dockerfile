@@ -5,7 +5,7 @@ FROM openjdk:17
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY target/store-data-api-0.0.1-SNAPSHOT-2024.02.07.11.40.59.jar app.jar
+COPY target/*.jar app.jar
 
 # Expose the port your application will run on
 EXPOSE 8082
