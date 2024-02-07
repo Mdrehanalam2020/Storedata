@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: c00
-          image: rehan2020/storedataimage
+          image: rehan2020/storedataapiimage
           ports:
             - containerPort: 8082
