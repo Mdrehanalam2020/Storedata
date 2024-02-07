@@ -1,5 +1,5 @@
 FROM openjdk:17
-RUN yum update && yum install maven -y
+RUN apt update && apt install maven -y
 RUN git clone https://github.com/Mdrehanalam2020/storedata.git
 RUN cd storedata && mvn install -DskipTests
 
