@@ -1,1 +1,20 @@
-
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: storedata
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: store
+  template:
+    metadata:
+      name: mypod
+      labels:
+        name: store
+    spec:
+      containers:
+        - name: c00
+          image: rehan2020/storedataimage
+          ports:
+            - containerPort: 8082
