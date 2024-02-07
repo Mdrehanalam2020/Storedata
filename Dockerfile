@@ -1,13 +1,8 @@
-FROM openjdk:17
-RUN apt update && apt install maven -y
-RUN git clone https://github.com/Mdrehanalam2020/storedata.git
-RUN cd storedata && mvn install
+# Copy the JAR file into the container
+COPY target/store-data-api-0.0.1-SNAPSHOT-2024.02.07.11.29.46.jar app.jar
 
-FROM tomcat:9-jre11
+# Expose the port your application will run on
+EXPOSE 8082
 
-RUN rm -rf /usr/local/tomcat/webapps/*
-
-COPY --from=BUILD_IMAGE **/target/*.war /usr/local/tomcat/webapps/ROOT.war
-
-EXPOSE 8080
-CMD ["catalina.sh", "run"]
+# Specify the command to run your application
+CMD ["java", "-jar", "app.jar"]
