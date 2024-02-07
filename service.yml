@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: mysec
+  name: storeservice
 spec:
   ports:
     - port: 8082
