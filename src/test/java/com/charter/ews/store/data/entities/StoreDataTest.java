@@ -3,6 +3,8 @@ package com.charter.ews.store.data.entities;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import java.time.LocalDate;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -396,5 +398,54 @@ public class StoreDataTest {
 		  assertEquals("123456", storeData.getSecondaryBiller());
 		  
 	  }
+	  
+	  @Test
+      void testStoreNumber()
+      {
+         StoreData storeData = new StoreData();
+          storeData.setStoreNumber("123456");
+          assertEquals("123456", storeData.getStoreNumber());
+          
+      }
+      @Test
+      void testStartDate()
+      {
+         StoreData storeData = new StoreData();
+          storeData.setStartDate(LocalDate.now());
+          assertNotNull(storeData.getStartDate());
+          
+      }
+      @Test
+      void testEndDate()
+      {
+         StoreData storeData = new StoreData();
+          storeData.setEndDate(LocalDate.now());
+          assertNotNull(storeData.getEndDate());
+          
+      }
+      @Test
+      void testStoreClosingDate()
+      {
+         StoreData storeData = new StoreData();
+          storeData.setStoreClosingDate(LocalDate.now());
+          assertNotNull(storeData.getStoreClosingDate());
+          
+      }
+      @Test
+      void testStoreOpeningDate()
+      {
+         StoreData storeData = new StoreData();
+          storeData.setStoreOpeningDate(LocalDate.now());
+          assertNotNull(storeData.getStoreOpeningDate());
+          
+      }
+      @Test
+      void testGrandOpeningDate()
+      {
+         StoreData storeData = new StoreData();
+          storeData.setGrandOpeningDate(LocalDate.now());
+          assertNotNull(storeData.getGrandOpeningDate());
+          
+      }
 
 }
