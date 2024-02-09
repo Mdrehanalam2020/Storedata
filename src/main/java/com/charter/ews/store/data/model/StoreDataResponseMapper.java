@@ -45,15 +45,12 @@ public class StoreDataResponseMapper {
         storeData.setPosQuantity(storeDataEntity.getPosQuantity() ==null?null : Math.toIntExact(storeDataEntity.getPosQuantity()) );
         storeData.setStartDate(storeDataEntity.getStartDate());
         storeData.setStopDate(storeDataEntity.getEndDate());
-        //	storeData.setchangeid
-        //	storeData.setchangeNotes
         storeData.setStoreOpeningDate(storeDataEntity.getStoreOpeningDate());
         storeData.setGrandOpeningDate(storeDataEntity.getGrandOpeningDate());
         storeData.setStoreClosingDate(storeDataEntity.getStoreClosingDate());
         storeData.setGatewayUse(storeDataEntity.getGatewayUse());
         storeData.setNotes(storeDataEntity.getNotes());
         storeData.setVersionNumber(storeDataEntity.getVersionNumber() ==null?null : Math.toIntExact(storeDataEntity.getVersionNumber()));
-        //	storeData.setApprovalStaus
         storeData.setRelocationToStore(storeDataEntity.getRelocationToStore());
         storeData.setQueuingSystem(storeDataEntity.getQueuingSystem());
         storeData.setSafeRoom(storeDataEntity.getSafeRoom());

@@ -2,11 +2,11 @@ package com.charter.ews.store.data.utils;
 
 import java.util.function.BooleanSupplier;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
 import com.charter.ews.store.data.exception.StoreDataServiceException;
+
+import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 //@AllArgsConstructor

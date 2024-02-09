@@ -5,6 +5,8 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Data
 @Schema(description = "Store Data Response")
 public class StoreDataResponse {
@@ -43,8 +45,11 @@ public class StoreDataResponse {
     private Integer totalWorkStations;
     private String posEnabledStatus;
     private Integer posQuantity;
+    @JsonFormat(pattern="MM/dd/yyyy")
     private LocalDate storeOpeningDate;
+    @JsonFormat(pattern="MM/dd/yyyy")
     private LocalDate grandOpeningDate;
+    @JsonFormat(pattern="MM/dd/yyyy")
     private LocalDate storeClosingDate;
     private String gatewayUse;
     private String notes;
@@ -58,6 +63,8 @@ public class StoreDataResponse {
     private String sharedFacility;
     private String secondaryBiller;
     private String qmaticMountType;
+    @JsonFormat(pattern="MM/dd/yyyy")
     private LocalDate startDate;
+    @JsonFormat(pattern="MM/dd/yyyy")
     private LocalDate stopDate;
 }

@@ -1,12 +1,13 @@
 package com.charter.ews.store.data.entities;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
-import lombok.Data;
-import org.springframework.cglib.core.Local;
-
 import java.time.LocalDate;
-import java.util.Date;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Data

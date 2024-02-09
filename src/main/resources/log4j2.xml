@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60" status="INFO">
+
+	<Properties>
+		<!-- log-path is a folder path where we need our logs files to be created,here 
+			it is "logs" under the same project folder. -->
+		<Property name="log-file">D://apps/bise/logs/store-data-api
+		</Property>
+		<Property name="profile-name">bise
+		</Property>
+		<Property name="env-name">SIT
+		</Property>
+		<Property name="service-name">store-data-api
+		</Property>
+	</Properties>
+
+	<Appenders>
+		<!-- Console Appender -->
+		<Console name="console-log" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [${profile-name}_${env-name}] [${service-name}] [%-5level] [%thread] %c{1} %message %n" />
+		</Console>
+
+		<!-- Rolling File Appender -->
+		<!-- Below format uses Daily Rolling (TimeBased) for rolling files -->
+		<RollingFile name="file-log" fileName="${log-file}.log"
+			filePattern="${log-file}/%d{yyyy-MM-dd}_%d{HH.mm.ss.SSS}.log">
+			<PatternLayout>
+				<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS}
+					[${profile-name}_${env-name}] [${service-name}] [%-5level]
+					[%thread] %c{1} %message %n</pattern>
+			</PatternLayout>
+
+			<Policies>
+				<SizeBasedTriggeringPolicy size="100MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="com.charter.*" additivity="false">
+			<AppenderRef ref="file-log" />
+			<AppenderRef ref="console-log" />
+		</Logger>
+
+		<Root level="info" additivity="false">
+			<AppenderRef ref="file-log" />
+			<AppenderRef ref="console-log" />
+		</Root>
+	</Loggers>
+</Configuration>
